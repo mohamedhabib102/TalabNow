@@ -41,7 +41,7 @@ Clone the repository and run the project locally:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/talabnow.git
+git clone https://github.com/mohamedhabib102/TalabNow
 cd talabnow
 npm install
 npm run dev
