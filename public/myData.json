@@ -1,0 +1,52 @@
+{
+    "profile":{
+        "fullName": "Mohamed Habib",
+        "date": "Novamber, 20, 2002",
+        "aboutMe": "I am Mohammad Habib, I have been studying programming for two years, then I took a foundation course in programming, then I learned Web Developer, and I have good programming skills.",
+        "job": "Front End Developer",
+        "website": "mhabib.com",
+        "email": "byaalkhy43@gmail.com",
+        "profilText": "My name is Mohamed Habib, a 22-year-old Front-End Developer with extensive experience in designing and devloping interactive, user-friendly interfaces. I specialize in HTML, CSS, JavaScript, and Bootstrap, and have recently expanded my skills to include React, which I am currently using to develop practical projects. I have successfully completed several projects, transforming ideas into fully responsive and interactive websites. I am committed to delivering exceptional user experiences by writing clean, efficient code and applying innovative design solutions. I am seeking a challenging role where I can leverage my skills to contribute to dynamic, user-centered projects and further grow my expertise in front-end development.", 
+        "skillsText": "I have strong skills in HTML, CSS, and JavaScript, along with a deep understanding of the latest front-end development technologies. Currently, I'm learning some other technologies.",
+        "skills": [
+            "HTML & HTML5", 
+            "CSS & CSS3", 
+            "Bootstrap", 
+            "Tailwind css", 
+            "JavaScript", 
+            "Reactjs & Vite",
+            "TypeScript",  
+            "Nextjs",  
+            "Redux & Redux Toolkit",
+            "Git & Gihub"
+        ],
+        "scoors": [
+            90, 
+            80, 
+            85, 
+            75, 
+            85, 
+            70, 
+            70, 
+            80, 
+            60,
+            65
+        ]
+    },
+    "projects": {
+        "iconProjectHtmlCss": ["fa-brands fa-html5 html-icon", "fa-brands fa-css3 css-icon"],
+        "iconProjectHtmlCssBoot": ["fa-brands fa-bootstrap boot-icon"],
+        "iconProjectPure": ["fa-brands fa-html5 html-icon", "fa-brands fa-css3 css-icon", "fa-brands fa-js js-icon"],
+        "iconProjectFrameWork": ["fa-brands fa-react react-icon", "fa-brands fa-js js-icon" ,"fa-brands fa-css3 css-icon", "fa-brands fa-bootstrap boot-icon"],
+        "projectLinksHtmlCss": [""],
+        "projectLinksPure": [""],
+        "projectLinksFrameWork": [""],
+        "projectLinksFrameWorkNams": ["You Can See", "You Can See", "Loading"],
+        "htmlcssBootName": ["SEO App", "Chain App", "Bondi App"],
+        "htmlcssBootPhoto": ["../src/assets/images/item-1.PNG", "../src/assets/images/item-2.PNG", "../src/assets/images/item-3.PNG"],
+        "pureJsName": ["Special Design App", "Game X O", "Dashboard App"],
+        "pureJsPhoto": ["../src/assets/images/item-4.PNG", "../src/assets/images/item-5.PNG", "../src/assets/images/item-6.PNG"],
+        "frameWorkName": ["Online Store App", "Portfolio App", "Coming soon"],
+        "frameWorkPhoto": ["../src/assets/images/item-7.PNG", "../src/assets/images/item-8.PNG", "../src/assets/images/item-9.png"]
+    }
+}

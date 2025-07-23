@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "titleOne": "Tal",
+    "titleTwo": "abNow",
+    "services": "Services",
+    "orders": "Orders",
+    "login": "Login",
+    "register": "Register"
+  },
+  "orders": {
+    "number": "Number",
+    "partName": "Part Name",
+    "serviceName": "Service Name",
+    "price": "Price",
+    "select": "Select",
+    "quantity": "Quantity",
+    "create": "Create Order",
+    "total": "SubTotal",
+    "allTotal": "Total"
+  },
+  "auth": {
+    "newAccount_1": "Create New",
+    "newAccount_2": "Account",
+    "loginAccount_1": "Login",
+    "loginAccount_2": "Account",
+    "fullName": "Full Name",
+    "address": "Address",
+    "phone": "Phone Number",
+    "password": "Password",
+    "create": "Create Now",
+    "login": "Login",
+    "messageNumber": "Phone number must be exactly 11 digits.",
+    "messagePassword": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 6 characters long."
+  },
+  "dashboard": {
+    "users": "Users",
+    "orders": "Orders",
+    "services": "Services",
+    "phoneNumber": "Phone Number",
+    "name": "Name",
+    "operation": "Actions",
+    "delte": "Delete",
+    "address": "Address",
+    "status": "Status",
+    "orderDate": "Order Date"
+  }
+}

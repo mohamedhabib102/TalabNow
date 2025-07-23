@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+
+:root {
+  --colorMain: #ff0077;
+  --borderColor: #646464;
+  --bgColor: #313131;
+  --replaceColor: #cc7fa3;
+  --bgPage: #151515;
+  --paddingTop: 60px;
+  --paddingBottom: 60px;
+}
+
+
+.coustom_container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .coustom_container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .coustom_container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .coustom_container {
+    width: 1170px;
+  }
+}
+
+
+
+.custom-rounded{
+  border-radius: 37px 42px 54px 49px;
+}
+
+
+@media (max-width: 768px) {
+  .show{
+    @apply flex absolute top-[67px] p-3 w-full left-0 bg-[#EEE] flex-col items-start;
+    li  {
+      @apply w-full;
+      a{
+        @apply block
+      }
+    }
+
+    div{
+      @apply flex-col !items-start w-full;
+      button{
+        @apply w-full justify-center
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "titleOne": "اطلب",
+    "titleTwo": "الآن",
+    "services": "الخدمات",
+    "orders": "الطلبات",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب"
+  },
+  "orders": {
+    "number": "الرقم",
+    "partName": "اسم القطعة",
+    "serviceName": "اسم الخدمة",
+    "price": "السعر",
+    "select": "تحديد",
+    "quantity": "العدد",
+    "create": " إنشاء طلب ",
+    "total": " المجموع الفرعي  ",
+    "allTotal": " الاجمالي "
+  },
+  "auth": {
+  "newAccount_1": " انشاء  ",
+  "newAccount_2": " حساب جديد ",
+  "loginAccount_1": " تسجيل ",
+  "loginAccount_2": " حساب ",
+  "fullName": "الاسم الكامل",
+  "address": "العنوان",
+  "phone": "رقم الهاتف",
+  "password": "كلمة المرور",
+  "create": "إنشاء الآن",
+  "login": "تسجيل الدخول",
+  "messageNumber": "يجب أن يكون رقم الهاتف مكونًا من 11 رقمًا",
+  "messagePassword": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد، ورقم، وأن تكون مكونة من 6 أحرف على الأقل."
+},
+"dashboard": {
+  "users": "المستخدمين",
+  "orders": "الطلبات",
+  "services": "الخدمات",
+  "phoneNumber": "رقم الهاتف",
+  "name": "الاسم",
+  "operation": "الإجراءات",
+  "delte": "حذف",
+  "address": "العنوان",
+  "status": "الحالة",
+  "orderDate": "تاريخ الطلب"
+}
+}

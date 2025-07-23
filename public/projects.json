@@ -1,0 +1,149 @@
+{
+  "projects": [
+    {
+      "name": "Game X O",
+      "link": "https://mohamedhabib102.github.io/GameXO/",
+      "image": "/images/item-5.PNG",
+      "description": "",
+      "category": "Pure JavaScript",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "fa-brands fa-html5 html-icon"
+        },
+        {
+          "name": "CSS",
+          "icon": "fa-brands fa-css3 css-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fa-brands fa-js js-icon"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard App",
+      "link": "https://mohamedhabib102.github.io/potfolio/",
+      "image": "/images/item-6.PNG",
+      "category": "Pure JavaScript",
+      "description": "",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "fa-brands fa-html5 html-icon"
+        },
+        {
+          "name": "CSS",
+          "icon": "fa-brands fa-css3 css-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fa-brands fa-js js-icon"
+        }
+      ]
+    },
+        {
+      "name": "Graduation Project - E-commerce",
+      "link": "https://project-college-mu.vercel.app/",
+      "image": "/images/project-college.PNG",
+      "category": "Pure JavaScript",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "fa-brands fa-html5 html-icon"
+        },
+        {
+          "name": "CSS",
+          "icon": "fa-brands fa-css3 css-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fa-brands fa-js js-icon"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "fa-brands fa-bootstrap boot-icon"
+        }
+      ]
+    },
+            {
+      "name": "SATS App",
+      "link": "https://sats-blush.vercel.app/",
+      "image": "/images/sats.PNG",
+      "category": "Pure JavaScript",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "fa-brands fa-html5 html-icon"
+        },
+        {
+          "name": "CSS",
+          "icon": "fa-brands fa-css3 css-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fa-brands fa-js js-icon"
+        }
+      ]
+    },
+    {
+      "name": "Online Store App",
+      "link": "https://online-store-app-lovat.vercel.app/",
+      "image": "/images/item-7.PNG",
+      "category": "FreamWork",
+      "description": "",
+      "technologies": [
+        {
+          "name": "JavaScript",
+          "icon": "fa-brands fa-js js-icon"
+        },
+        {
+          "name": "React",
+          "icon": "fa-brands fa-react react-icon"
+        },
+        {
+          "name": "CSS",
+          "icon": "fa-brands fa-css3 css-icon"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "fa-brands fa-bootstrap boot-icon"
+        }
+      ]
+    },
+    {
+      "name": "To Do List App",
+      "link": "https://mhabib-to-do-list-app.netlify.app/",
+      "image": "/images/item-10.PNG",
+      "category": "FreamWork",
+      "description": "",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "fa-brands fa-react react-icon"
+        },
+        {
+          "name": "tailwind",
+          "icon": "/images/tailwind-css-remove-bg.png"
+        }
+      ]
+    },
+    {
+      "name": "Tasks Pro",
+      "link": "https://tasks-pro-five.vercel.app/",
+      "image": "images/Tasks-Pro.PNG",
+      "description": "",
+      "category": "FreamWork",
+      "technologies": [ 
+        {
+          "name": "Nextjs",
+          "icon": "/images/nextjs-icon.png"
+        },
+        {
+          "name": "tailwind",
+          "icon": "/images/tailwind-css-remove-bg.png"
+        }
+      ]
+    }
+  ]
+}
