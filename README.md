@@ -49,13 +49,18 @@ npm run dev
 bash
 Copy
 Edit
+
+
 src/
-├── components/        # Reusable components like Navbar, Card, etc.
-├── pages/             # Pages like Home, Login, Dashboard, etc.
-├── context/           # Global state context for auth and services
-├── utils/             # Utility functions (API helpers, etc.)
+├── components/        
+# Reusable components like Navbar, Card, etc.
+├── pages/             
+# Pages like Home, Login, Dashboard, etc.
+├── context/           
+# Global state context for auth and services
 ├── App.jsx
 ├── main.jsx
+
 
 📖 Features Summary
 Feature	User	Admin
