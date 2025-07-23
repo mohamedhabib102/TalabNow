@@ -54,7 +54,7 @@ export default function Navbar(){
                            }
                            {
                             userType === "Admin" ? (
-                              <Link className={`${toggle ? "w-full text-center" : ""} bg-blue-400 text-white transition py-2 px-3 rounded-lg font-normal hover:bg-blue-600`}  to={"/dashboard"}>Dashboard</Link>
+                              <Link className={`${toggle ? "w-full text-center" : ""} bg-blue-400 text-white transition py-2 px-3 rounded-lg font-normal hover:bg-blue-600`}  to={"/dashboard"}>{t("dashboard.dashboard")}</Link>
                             ) : ""
                            }
                            <button

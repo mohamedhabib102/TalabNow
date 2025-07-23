@@ -10,6 +10,8 @@ import ProtectedRoute from './Components/ProtectedRoutes';
 import OrdersProtectedRoute from './Components/OrdersProtectedRoute';
 import Users from './Components/users';
 import OrdersAdmin from './Components/OrdersAdmin';
+import ServicesAdmin from './Components/ServicesAdmin';
+import ProtectedRoutesAuth from './Components/ProtectedRoutesAuth';
 
 
 function App() {
@@ -26,8 +28,11 @@ function App() {
               <Orders />
             </OrdersProtectedRoute>
         }/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/register' element={<Register />}/>
+        <Route element={<ProtectedRoutesAuth />}>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
+        </Route>
+
           <Route path='/dashboard' element={
             <ProtectedRoute>
               <DashboardLayout />
@@ -36,7 +41,7 @@ function App() {
             <Route index element={<Navigate to="users" replace />} />
              <Route path='users' element={<Users />}/>
              <Route path='ordersAdmin' element={<OrdersAdmin />}/>
-             <Route path='servicesAdmin' element={<OrdersAdmin />}/>
+             <Route path='servicesAdmin' element={<ServicesAdmin />}/>
           </Route>
       </Routes>
     </main>

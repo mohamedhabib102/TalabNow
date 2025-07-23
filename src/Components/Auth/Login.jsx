@@ -6,9 +6,9 @@ import { FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router";
 
-
+// Refused
 // 01103826261
-// Ahmedhazem2006
+// Ahmedhazem2006  Cancled	
 export default function Login() {
   const { t, i18n} = useTranslation();
   const currentLang = i18n.language
@@ -18,8 +18,9 @@ export default function Login() {
       })
       const [message, setMessage] = useState("")
       const [eye, setEye] = useState(false);
-      const { userType, setUserType, userId, setUserId } = useAuth();
+      const { setUserType, setUserId } = useAuth();
       const navigate = useNavigate();
+      const [messageError, setMessageError] = useState("")
   
 
   
@@ -48,7 +49,7 @@ export default function Login() {
         }
         
         setMessage("");
-
+  //01103826261
         try {
           const response = await axios.post(
             "https://laundryar7.runasp.net/api/Laundry/login",
@@ -67,6 +68,9 @@ export default function Login() {
           }
         } catch (error) {
           console.error("Registration Error:", error);
+          if (error.response.status === 401){
+            setMessageError("Wrong Password Or Email")
+          }
         }
   };
 
@@ -94,6 +98,7 @@ export default function Login() {
               value={formData.phoneNumber}
               onChange={handelCahnge}
               required
+              maxLength={11}
             />
           </div>
 
@@ -106,11 +111,13 @@ export default function Login() {
               value={formData.password}
               onChange={handelCahnge}
               required
+              maxLength={14}
             />
             <span className={`${currentLang === "ar" ? "left-4" : "right-4"}  absolute top-1/2 -translate-y-1/2 cursor-pointer`} 
               onClick={handleEye}>{eye ? <FaEye size={25}/> : <FaEyeSlash size={25}/>}</span>
           </div>
            {message ? <p className="text-left p-3 bg-[#EEE] text-red-600 font-semibold rounded-lg mb-2">{message ? message : ""}</p> : ""}
+           {messageError ? <p className="text-left p-3 bg-[#EEE] text-red-600 font-semibold rounded-lg mb-2">{messageError ? messageError : ""}</p> : ""}
 
           <button className="bg-blue-500 py-3 px-4 rounded-xl text-white lg:w-40 w-full text-lg cursor-pointer mt-3">
             {t("auth.login")}

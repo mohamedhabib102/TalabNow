@@ -33,15 +33,26 @@
     "messagePassword": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 6 characters long."
   },
   "dashboard": {
+    "dashboard": "Dashboard",
     "users": "Users",
     "orders": "Orders",
     "services": "Services",
     "phoneNumber": "Phone Number",
     "name": "Name",
+    "changeStatus": "Change Status",
     "operation": "Actions",
     "delte": "Delete",
+    "createServe": " Add New Service ",
+    "createServe_1": "Create New",
+    "createServe_2": "Service",
+    "serviceName": "Name Service",
+    "orderStatus": "Order Status",
+    "messageOrder": "Message Order",
+    "price": "Price Service",
     "address": "Address",
     "status": "Status",
-    "orderDate": "Order Date"
+    "orderDate": "Order Date",
+    "messageAddNewServe": "Please fill in all fields before adding a new service.",
+    "messageChange": "Please fill in all fields before Changed."
   }
 }

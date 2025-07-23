@@ -6,6 +6,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [userType, setUserType] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // ⬅️ حالة التحميل
   const navigate = useNavigate();
 
   const encrypt = (text) => {
@@ -26,36 +27,30 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-   const logout = () => {
-     localStorage.removeItem("userType");
-     localStorage.removeItem("userId");
-     setUserType(null);
-     setUserId(null);
-     navigate("/")
-   };
+  const logout = () => {
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userId");
+    setUserType(null);
+    setUserId(null);
+    navigate("/");
+  };
 
-  // Load from localStorage on start
   useEffect(() => {
     const storedType = localStorage.getItem("userType");
     const storedId = localStorage.getItem("userId");
 
-    if (storedType) {
-      setUserType(decrypt(storedType));
-    }
+    if (storedType) setUserType(decrypt(storedType));
+    if (storedId) setUserId(decrypt(storedId));
 
-    if (storedId) {
-      setUserId(decrypt(storedId));
-    }
+    setIsLoading(false); 
   }, []);
 
-  // Save to localStorage when userType changes
   useEffect(() => {
     if (userType) {
       localStorage.setItem("userType", encrypt(userType));
     }
   }, [userType]);
 
-  // Save to localStorage when userId changes
   useEffect(() => {
     if (userId) {
       localStorage.setItem("userId", encrypt(userId));
@@ -63,7 +58,9 @@ export const AuthProvider = ({ children }) => {
   }, [userId]);
 
   return (
-    <AuthContext.Provider value={{ userType, setUserType, userId, setUserId, logout }}>
+    <AuthContext.Provider
+      value={{ userType, setUserType, userId, setUserId, logout, isLoading }}
+    >
       {children}
     </AuthContext.Provider>
   );

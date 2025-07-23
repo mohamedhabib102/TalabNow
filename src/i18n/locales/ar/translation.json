@@ -33,15 +33,27 @@
   "messagePassword": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد، ورقم، وأن تكون مكونة من 6 أحرف على الأقل."
 },
 "dashboard": {
-  "users": "المستخدمين",
+  "dashboard": " لوحة التحكم ",
+  "users": "المستخدمون",
   "orders": "الطلبات",
   "services": "الخدمات",
   "phoneNumber": "رقم الهاتف",
   "name": "الاسم",
+  "changeStatus": "تغيير الحالة",
   "operation": "الإجراءات",
   "delte": "حذف",
+  "createServe": "إضافة خدمة جديدة",
+  "createServe_1": "إنشاء",
+  "createServe_2": "خدمة جديدة",
+  "serviceName": "اسم الخدمة",
+  "orderStatus": "حالة الطلب",
+  "messageOrder": "رسالة الطلب",
+  "price": "سعر الخدمة",
   "address": "العنوان",
   "status": "الحالة",
-  "orderDate": "تاريخ الطلب"
+  "orderDate": "تاريخ الطلب",
+  "messageAddNewServe": "يرجى ملء جميع الحقول قبل إضافة الخدمة الجديدة.",
+  "messageChange": "يرجى ملء جميع الحقول قبل تعديل البيانات."
 }
+
 }

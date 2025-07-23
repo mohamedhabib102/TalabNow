@@ -62,6 +62,7 @@ export default function Orders() {
                 <th className="p-4 bg-[#EEE] text-blue-400 font-bold text-[18px]">الحالة</th>
                 <th className="p-4 bg-[#EEE] text-blue-400 font-bold text-[18px]">الإجمالي</th>
                 <th className="p-4 bg-[#EEE] text-blue-400 font-bold text-[18px]"> تغير الحالة </th>
+                <th className="p-4 bg-[#EEE] text-blue-400 font-bold text-[18px]"> سبب الرفض  </th>
               </tr>
             </thead>
             <tbody>
@@ -73,7 +74,7 @@ export default function Orders() {
                   <td className="p-4 border">{new Date(order.deliveryDate).toLocaleDateString()}</td>
                   <td className="p-4 border">{order.status}</td>
                   <td className="p-4 border">{order.totalAmount} ج.م</td>
-                  <td>
+                  <td className="p-4 border">
                     <button
                       onClick={() => handleChangeStatus(order.orderID, order.status)}
                       className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
@@ -81,6 +82,7 @@ export default function Orders() {
                       {order.status === "Pending" ? "Pending" : "Cleaned"}
                     </button>
                   </td>
+                  <td className="p-4 border">{order.refusedReason === "" ? "Pending" : order.refusedReason}</td>
                 </tr>
               ))}
               {orders.length === 0 && (

@@ -37,9 +37,9 @@ export default function Users (){
                         {users.length < 0 ? (<p>Not Founde Users Now</p>) : (
                             users.map((ele, index) => (
                                 <tr key={ele.id}>
-                                    <td className={`p-4 text-lg text-center bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{index + 1}</td>
-                                    <td className={`p-4 text-lg text-center bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.name}</td>
-                                    <td className={`p-4 text-lg text-center bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.phoneNumber}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{index + 1}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.name}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.phoneNumber}</td>
                                 </tr>
                             ))
                         )}
