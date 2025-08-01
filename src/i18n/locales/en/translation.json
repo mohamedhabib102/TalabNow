@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "titleOne": "Tal",
+    "titleTwo": "abNow",
+    "services": "Services",
+    "orders": "Orders",
+    "login": "Login",
+    "register": "Register"
+  },
+  "orders": {
+    "number": "Number",
+    "partName": "Part Name",
+    "serviceName": "Service Name",
+    "price": "Price",
+    "select": "Select",
+    "quantity": "Quantity",
+    "create": "Create Order",
+    "total": "SubTotal",
+    "allTotal": "Total",
+    "statusNow": "Status changed successfully",
+    "cancelNow": "Cancel"
+  },
+    "ordersTable": {
+    "orderNumber": "Order Number",
+    "customerName": "Customer Name",
+    "orderDate": "Order Date",
+    "deliveryDate": "Delivery Date",
+    "status": "Status",
+    "total": "Total",
+    "cancelOrder": "Cancel Order",
+    "rejectionReason": "Rejection Reason"
+  },
+  "auth": {
+    "newAccount_1": "Create New",
+    "newAccount_2": "Account",
+    "loginAccount_1": "Login",
+    "loginAccount_2": "Account",
+    "fullName": "Full Name",
+    "address": "Address",
+    "phone": "Phone Number",
+    "password": "Password",
+    "create": "Create Now",
+    "login": "Login",
+    "messageNumber": "Phone number must be exactly 11 digits.",
+    "messagePassword": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 6 characters long."
+  },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "orders": "Orders",
+    "services": "Services",
+    "phoneNumber": "Phone Number",
+    "name": "Name",
+    "changeStatus": "Change Status",
+    "operation": "Actions",
+    "delte": "Delete",
+    "createServe": " Add New Service ",
+    "createServe_1": "Create New",
+    "createServe_2": "Service",
+    "serviceName": "Name Service",
+    "orderStatus": "Order Status",
+    "messageOrder": "Message Order",
+    "price": "Price Service",
+    "address": "Address",
+    "status": "Status",
+    "orderDate": "Order Date",
+    "messageAddNewServe": "Please fill in all fields before adding a new service.",
+    "messageChange": "Please fill in all fields before Changed."
+  },
+    "features": {
+    "shopping_title": "Shop Easily",
+    "shopping_desc": "Manage your cart and track your orders with ease.",
+    "tracking_title": "Track Your Orders",
+    "tracking_desc": "Know the status of every order moment by moment.",
+    "chat_title": "Instant Chat",
+    "chat_desc": "Easily communicate with support or sellers directly.",
+    "secure_title": "Secure Experience",
+    "secure_desc": "All your data is stored and encrypted for safety.",
+    "register_now": "Create Your Account Now"
+  },
+    "start": {
+    "heading": "Start Your Journey With Us Now",
+    "description": "!Log in to enjoy all the features and easily track your orders"
+  }
+}

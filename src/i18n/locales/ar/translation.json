@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "titleOne": "اطلب",
+    "titleTwo": "الآن",
+    "services": "الخدمات",
+    "orders": "الطلبات",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب"
+  },
+  "orders": {
+    "number": "الرقم",
+    "partName": "اسم القطعة",
+    "serviceName": "اسم الخدمة",
+    "price": "السعر",
+    "select": "تحديد",
+    "quantity": "العدد",
+    "create": " إنشاء طلب ",
+    "total": " المجموع الفرعي  ",
+    "allTotal": " الاجمالي ",
+    "statusNow": " تم تغير الحالة بنجاح ",
+    "cancelNow": " الغاء "
+  },
+  "auth": {
+  "newAccount_1": " انشاء  ",
+  "newAccount_2": " حساب جديد ",
+  "loginAccount_1": " تسجيل ",
+  "loginAccount_2": " حساب ",
+  "fullName": "الاسم الكامل",
+  "address": "العنوان",
+  "phone": "رقم الهاتف",
+  "password": "كلمة المرور",
+  "create": "إنشاء الآن",
+  "login": "تسجيل الدخول",
+  "messageNumber": "يجب أن يكون رقم الهاتف مكونًا من 11 رقمًا",
+  "messagePassword": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد، ورقم، وأن تكون مكونة من 6 أحرف على الأقل."
+},
+    "ordersTable": {
+    "orderNumber": "رقم الطلب",
+    "customerName": "اسم العميل",
+    "orderDate": "تاريخ الطلب",
+    "deliveryDate": "تاريخ التسليم",
+    "status": "الحالة",
+    "total": "الإجمالي",
+    "cancelOrder": "الغاء الطلب",
+    "rejectionReason": "سبب الرفض"
+  },
+"dashboard": {
+  "dashboard": " لوحة التحكم ",
+  "users": "المستخدمون",
+  "orders": "الطلبات",
+  "services": "الخدمات",
+  "phoneNumber": "رقم الهاتف",
+  "name": "الاسم",
+  "changeStatus": "تغيير الحالة",
+  "operation": "الإجراءات",
+  "delte": "حذف",
+  "createServe": "إضافة خدمة جديدة",
+  "createServe_1": "إنشاء",
+  "createServe_2": "خدمة جديدة",
+  "serviceName": "اسم الخدمة",
+  "orderStatus": "حالة الطلب",
+  "messageOrder": "رسالة الطلب",
+  "price": "سعر الخدمة",
+  "address": "العنوان",
+  "status": "الحالة",
+  "orderDate": "تاريخ الطلب",
+  "messageAddNewServe": "يرجى ملء جميع الحقول قبل إضافة الخدمة الجديدة.",
+  "messageChange": "يرجى ملء جميع الحقول قبل تعديل البيانات."
+},
+  "features": {
+    "shopping_title": "تسوق بسهولة",
+    "shopping_desc": "إدارة سلة المشتريات وتتبع الطلبات بكل سهولة.",
+    "tracking_title": "تتبع طلباتك",
+    "tracking_desc": "اعرف حالة كل طلب لحظة بلحظة.",
+    "chat_title": "دردشة فورية",
+    "chat_desc": "تواصل مع الدعم أو البائع مباشرة بسهولة.",
+    "secure_title": "تجربة آمنة",
+    "secure_desc": "كل بياناتك محفوظة ومشفّرة لضمان الأمان.",
+    "register_now": "أنشئ حسابك الآن"
+  },
+    "start": {
+    "heading": "ابدأ رحلتك معنا الآن",
+    "description": "سجّل دخولك لتستمتع بكافة الميزات وتتبع طلباتك بسهولة!"
+  }
+}
