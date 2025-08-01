@@ -41,6 +41,7 @@
     "password": "Password",
     "create": "Create Now",
     "login": "Login",
+    "mesaageErroLog": "Wrong Password Or Email",
     "messageNumber": "Phone number must be exactly 11 digits.",
     "messagePassword": "Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 6 characters long."
   },
