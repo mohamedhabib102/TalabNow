@@ -48,11 +48,11 @@ export default function Register (){
         }
         
         
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{14,}$/g;
-        if (!passwordRegex.test(formData.password)){
-          setMessage(t("auth.messagePassword"))
-          return;
-        }
+        // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{14,}$/g;
+        // if (!passwordRegex.test(formData.password)){
+        //   setMessage(t("auth.messagePassword"))
+        //   return;
+        // }
         
         setMessage("");
 

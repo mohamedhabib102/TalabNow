@@ -37,11 +37,11 @@ export default function Login() {
       return;
     }
 
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{14,}$/g;
-    if (!passwordRegex.test(formData.password)) {
-      setMessageKey("auth.messagePassword");
-      return;
-    }
+    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{14,}$/g;
+    // if (!passwordRegex.test(formData.password)) {
+    //   setMessageKey("auth.messagePassword");
+    //   return;
+    // }
 
     setMessageKey("");
     setMessageErrorKey("");
