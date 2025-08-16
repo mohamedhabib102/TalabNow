@@ -26,6 +26,12 @@ export default function Services (){
       getAllServces()
     }, [])
 
+  const ACTIONS = {
+       INC: "INCREMENT",
+       DEC: "DECREMENT"
+  };
+
+
     const getAllServces = async () => {
       try {
         const res = await axios.get("https://laundryar7.runasp.net/api/Laundry/GetAllServices");
@@ -46,7 +52,7 @@ export default function Services (){
     const handleQuantityChange = (id, type) => {
       const updatedServices = services.map((item) => {
         if (item.servicesID === id) {
-          const newQuantity = type === "inc"
+          const newQuantity = type === 1
             ? item.quantity + 1
             : item.quantity > 1
             ? item.quantity - 1
@@ -64,6 +70,8 @@ export default function Services (){
       });
     
       setServices(updatedServices);
+      console.log(id, type);
+      
     };
 
     const handelAllTotal = () => {
@@ -181,16 +189,20 @@ export default function Services (){
                </p>
                <p className="flex items-center gap-2 mb-3 last:mb-0"><strong className="bg-[#EEE] px-4 text-blue-400 py-3 rounded-lg">{t("orders.quantity")}:</strong>
                  <button onClick={() => {
-                   handleQuantityChange(ele.servicesID, "dec");
+                   handleQuantityChange(ele.servicesID, -1);
                    handelAllTotal();
-                 }} className="bg-blue-400 mx-2 py-1 px-3 text-white rounded hover:bg-blue-500 transition">
+                 }} 
+                 
+                 className="bg-blue-400 mx-2 py-1 px-3 text-white rounded hover:bg-blue-500 transition">
                    <FaMinus />
                  </button>
                  {ele.quantity}
                  <button onClick={() => {
-                   handleQuantityChange(ele.servicesID, "inc");
+                   handleQuantityChange(ele.servicesID, 1);
                    handelAllTotal();
-                 }} className="bg-blue-400 mx-2 py-1 px-3 text-white rounded hover:bg-blue-500 transition">
+                 }}
+
+                  className="bg-blue-400 mx-2 py-1 px-3 text-white rounded hover:bg-blue-500 transition">
                    <FaPlus />
                  </button>
                </p>
@@ -234,12 +246,12 @@ export default function Services (){
               </td>
               <td className="lg:p-4 text-center border-b-2 border-[#eee]">
                 <button onClick={() => {
-                  handleQuantityChange(ele.servicesID, "dec");
+                  handleQuantityChange(ele.servicesID, -1);
                   handelAllTotal();
                 }} className="bg-blue-400 py-2 px-3 rounded-lg text-white hover:bg-blue-500 transition"><FaMinus /></button>
                 <span className="inline-block px-2">{ele.quantity}</span>
                 <button onClick={() => {
-                  handleQuantityChange(ele.servicesID, "inc");
+                  handleQuantityChange(ele.servicesID, 1);
                   handelAllTotal();
                 }} className="bg-blue-400 py-2 px-3 rounded-lg text-white hover:bg-blue-500 transition"><FaPlus /></button>
               </td>
