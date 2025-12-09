@@ -217,21 +217,21 @@ export default function Services() {
                         <div className="space-y-4 px-2">
 
                           {/* Price Row */}
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-1 justify-between">
                             <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
                               {t("orders.price")}
                             </span>
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center">
+                            <span className="bg-white text-[#1E5FAC] px-1 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center">
                               {ele.unitPrice} {currentLang === "ar" ? "ج.م" : "EGP"}
                             </span>
                           </div>
 
                           {/* Quantity Row */}
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 justify-between">
                             <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
                               {t("orders.quantity")}
                             </span>
-                            <div className="flex items-center gap-2" dir="ltr">
+                            <div className="flex items-center" dir="ltr">
                               <button onClick={() => {
                                 handleQuantityChange(ele.servicesID, -1);
                                 handelAllTotal();
@@ -239,7 +239,7 @@ export default function Services() {
                                 className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full shadow-sm hover:bg-blue-50 transition">
                                 <FaMinus size={12} />
                               </button>
-                              <span className="text-[#1E5FAC] font-bold w-6 text-center text-lg">{ele.quantity}</span>
+                              <span className="text-[#1E5FAC] font-bold text-center mx-2 text-lg">{ele.quantity}</span>
                               <button onClick={() => {
                                 handleQuantityChange(ele.servicesID, 1);
                                 handelAllTotal();
