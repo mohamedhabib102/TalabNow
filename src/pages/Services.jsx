@@ -173,12 +173,12 @@ export default function Services() {
                 <div className="grid grid-cols-1  min-[1400px]:grid-cols-4 lg:grid-cols-3  gap-6">
                   {services.map((ele) => (
                     <div key={ele.servicesID} className="relative bg-gradient-to-br from-[#0D54A0] via-[#4E88C8] to-[#ECECEC] 
-                 rounded-[45px] p-7 shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
-                      <div className="bg-[#CFE2F8] rounded-[25px] pt-8 p-3 h-full relative">
+                 rounded-[35px] p-4 shadow-[5px_6px_2px_rgb(0_0_0/25%)] w-[85%] mx-auto md:w-full">
+                      <div className="bg-[#CFE2F8] rounded-[20px] pt-6 p-2 h-full relative">
 
                         {/* Selection Checkbox */}
-                        <div className="absolute top-2 right-4 flex flex-col items-center z-10">
-                          <span className="text-[#1E5FAC] text-xs font-bold mb-1">{t("orders.select")}</span>
+                        <div className="absolute top-2 right-3 flex flex-col items-center z-10">
+                          <span className="text-[#1E5FAC] text-[10px] font-bold mb-0.5">{t("orders.select")}</span>
                           <input
                             name="checked"
                             id={`service-${ele.servicesID}`}
@@ -196,39 +196,39 @@ export default function Services() {
                           <label
                             htmlFor={`service-${ele.servicesID}`}
                             className="
-                              w-7 h-7 rounded-xl bg-white border-2 border-white shadow-[9px_11px_4px_rgb(0_0_0/25%)]
+                              w-6 h-6 rounded-lg bg-white border-2 border-white shadow-[5px_6px_2px_rgb(0_0_0/25%)]
                               flex items-center justify-center cursor-pointer
                               transition-all duration-300
                               peer-checked:bg-[#1E5FAC] peer-checked:border-[#1E5FAC]
                             "
                           >
-                            <FaCheck size={14} className="text-white peer-checked:opacity-100 transition-opacity" />
+                            <FaCheck size={12} className="text-white peer-checked:opacity-100 transition-opacity" />
                           </label>
                         </div>
 
                         {/* Title */}
-                        <div className="mt-8 mb-6 flex justify-center">
-                          <p className="px-6 py-3 bg-white rounded-full shadow-[9px_11px_4px_rgb(0_0_0/25%)] text-[#1E5FAC] font-bold text-lg text-center min-w-[160px]">
+                        <div className="mt-6 mb-4 flex justify-center">
+                          <p className="px-4 py-2 bg-white rounded-full shadow-[5px_6px_2px_rgb(0_0_0/25%)] text-[#1E5FAC] font-bold text-base text-center min-w-[120px]">
                             {ele.servicesName}
                           </p>
                         </div>
 
                         {/* Rows Container */}
-                        <div className="space-y-4 px-2">
+                        <div className="space-y-3 px-1">
 
                           {/* Price Row */}
                           <div className="flex items-center gap-1 justify-between">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
+                            <span className="bg-white text-[#1E5FAC] px-3 py-1 text-sm rounded-full font-bold shadow-[5px_6px_2px_rgb(0_0_0/25%)] min-w-[70px] text-center order-last">
                               {t("orders.price")}
                             </span>
-                            <span className="bg-white text-[#1E5FAC] px-1 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center">
+                            <span className="bg-white text-[#1E5FAC] px-1 py-1 text-sm rounded-full font-bold shadow-[5px_6px_2px_rgb(0_0_0/25%)] min-w-[70px] text-center">
                               {ele.unitPrice} {currentLang === "ar" ? "ج.م" : "EGP"}
                             </span>
                           </div>
 
                           {/* Quantity Row */}
-                          <div className="flex items-center gap-2 justify-between !my-6">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
+                          <div className="flex items-center gap-1 justify-between !my-4">
+                            <span className="bg-white text-[#1E5FAC] px-3 py-1 text-sm rounded-full font-bold shadow-[5px_6px_2px_rgb(0_0_0/25%)] min-w-[70px] text-center order-last">
                               {t("orders.quantity")}
                             </span>
                             <div className="flex items-center" dir="ltr">
@@ -236,26 +236,26 @@ export default function Services() {
                                 handleQuantityChange(ele.servicesID, -1);
                                 handelAllTotal();
                               }}
-                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-3xl min-w-[50px]  shadow-[9px_11px_4px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
-                                <FaMinus size={12} />
+                                className="w-6 h-6 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full min-w-[35px] shadow-[5px_6px_2px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
+                                <FaMinus size={10} />
                               </button>
-                              <span className="text-[#1E5FAC] font-bold text-center mx-2.5 text-lg">{ele.quantity}</span>
+                              <span className="text-[#1E5FAC] font-bold text-center mx-1.5 text-base">{ele.quantity}</span>
                               <button onClick={() => {
                                 handleQuantityChange(ele.servicesID, 1);
                                 handelAllTotal();
                               }}
-                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-3xl min-w-[50px] shadow-[9px_11px_4px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
-                                <FaPlus size={12} />
+                                className="w-6 h-6 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full min-w-[35px] shadow-[5px_6px_2px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
+                                <FaPlus size={10} />
                               </button>
                             </div>
                           </div>
 
                           {/* Total Price */}
-                          <div className="flex items-center gap-2 justify-between !mb-7">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
+                          <div className="flex items-center gap-1 justify-between !mb-4">
+                            <span className="bg-white text-[#1E5FAC] px-3 py-1 text-sm rounded-full font-bold shadow-[5px_6px_2px_rgb(0_0_0/25%)] min-w-[70px] text-center order-last">
                               {t("orders.total")}
                             </span>
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center">
+                            <span className="bg-white text-[#1E5FAC] px-3 py-1 text-sm rounded-full font-bold shadow-[5px_6px_2px_rgb(0_0_0/25%)] min-w-[70px] text-center">
                               <span className={`
                                   ${currentLang === "ar" ? "ml-1" : "mr-1"}
                                   `}>{ele.totalPrice || ele.unitPrice}</span>
@@ -286,7 +286,7 @@ export default function Services() {
                       </div>
                     </div>
                   </div>
-                
+
                   {/* Tracking */}
                   <div className="relative rounded-3xl shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
                     <div className="bg-gradient-to-br from-[#0D54A0] via-[#4E88C8] to-[#ECECEC] 
@@ -298,7 +298,7 @@ export default function Services() {
                       </div>
                     </div>
                   </div>
-                
+
                   {/* Chat */}
                   <div className="relative rounded-3xl shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
                     <div className="bg-gradient-to-br from-[#0D54A0] via-[#4E88C8] to-[#ECECEC] 
@@ -310,7 +310,7 @@ export default function Services() {
                       </div>
                     </div>
                   </div>
-                
+
                   {/* Secure */}
                   <div className="relative rounded-3xl shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
                     <div className="bg-gradient-to-br from-[#0D54A0] via-[#4E88C8] to-[#ECECEC] 
