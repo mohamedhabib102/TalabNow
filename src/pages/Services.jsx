@@ -167,13 +167,13 @@ export default function Services() {
                 <p className="text-lg text-gray-700 mb-6 text-center" style={{ direction: "rtl" }}>{t("start.description")}</p>
               </>
             )}
-          <section className="m-auto w-full " dir={currentLang === "ar" ? "rtl" : "ltr"}>
+          <section className="m-auto w-full " >
             {userId ? (
               <div className="w-full">
-                <div className="grid grid-cols-1  min-[1025px]:grid-cols-4 lg:grid-cols-3  gap-6">
-                  {services.map((ele, index) => (
+                <div className="grid grid-cols-1  min-[1400px]:grid-cols-4 lg:grid-cols-3  gap-6">
+                  {services.map((ele) => (
                     <div key={ele.servicesID} className="relative bg-gradient-to-br from-[#0D54A0] via-[#4E88C8] to-[#ECECEC] 
-                 rounded-3xl p-5 shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
+                 rounded-[45px] p-7 shadow-[10px_11px_4px_rgb(0_0_0/25%)]">
                       <div className="bg-[#CFE2F8] rounded-[25px] pt-8 p-3 h-full relative">
 
                         {/* Selection Checkbox */}
@@ -227,7 +227,7 @@ export default function Services() {
                           </div>
 
                           {/* Quantity Row */}
-                          <div className="flex items-center gap-2 justify-between">
+                          <div className="flex items-center gap-2 justify-between !my-6">
                             <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
                               {t("orders.quantity")}
                             </span>
@@ -239,7 +239,7 @@ export default function Services() {
                                 className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full shadow-sm hover:bg-blue-50 transition">
                                 <FaMinus size={12} />
                               </button>
-                              <span className="text-[#1E5FAC] font-bold text-center mx-2 text-lg">{ele.quantity}</span>
+                              <span className="text-[#1E5FAC] font-bold text-center mx-1 text-lg">{ele.quantity}</span>
                               <button onClick={() => {
                                 handleQuantityChange(ele.servicesID, 1);
                                 handelAllTotal();
@@ -251,7 +251,7 @@ export default function Services() {
                           </div>
 
                           {/* Total Price */}
-                          <div className="flex items-center gap-2 justify-between">
+                          <div className="flex items-center gap-2 justify-between !mb-7">
                             <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
                               {t("orders.total")}
                             </span>

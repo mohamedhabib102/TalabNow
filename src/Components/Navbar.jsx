@@ -45,12 +45,12 @@ export default function Navbar() {
   }, [toggle]);
 
   return (
-    <header ref={reftElement} className="bg-white shadow-md relative" dir={currentLang == "ar" ? "rtl" : "ltr"}>
+    <header ref={reftElement} className="bg-white shadow-md relative" dir={currentLang === "ar" ? "rtl" : "ltr"}>
       <div className="coustom_container">
         <nav className="flex justify-between items-center py-4">
           <Link to={"/"} className="text-2xl font-bold text-gray-800"><span className="text-[35px] text-[#1E5FAC]">First</span>Clean</Link>
           <ul className={`${toggle ? "show" : "hidden"} items-center gap-3 md:flex w-[60%] justify-between z-40`}>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <li className={`${currentLang === "ar" ? "lg:mr-2 last:mr-0" : "lg:ml-2 last:ml-0"}`}><NavLink className={({ isActive }) =>
                 `${isActive ? "text-[#1E5FAC] font-bold" : "text-gray-600 font-medium hover:text-[#1E5FAC]"} text-xl transition-colors duration-300`
               } to={"/"}>{t("navbar.services")}</NavLink></li>
