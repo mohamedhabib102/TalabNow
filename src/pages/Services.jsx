@@ -196,7 +196,7 @@ export default function Services() {
                           <label
                             htmlFor={`service-${ele.servicesID}`}
                             className="
-                              w-7 h-7 rounded-xl bg-white border-2 border-white shadow-sm
+                              w-7 h-7 rounded-xl bg-white border-2 border-white shadow-[9px_11px_4px_rgb(0_0_0/25%)]
                               flex items-center justify-center cursor-pointer
                               transition-all duration-300
                               peer-checked:bg-[#1E5FAC] peer-checked:border-[#1E5FAC]
@@ -208,7 +208,7 @@ export default function Services() {
 
                         {/* Title */}
                         <div className="mt-8 mb-6 flex justify-center">
-                          <p className="px-6 py-3 bg-white rounded-full shadow-md text-[#1E5FAC] font-bold text-lg text-center min-w-[160px]">
+                          <p className="px-6 py-3 bg-white rounded-full shadow-[9px_11px_4px_rgb(0_0_0/25%)] text-[#1E5FAC] font-bold text-lg text-center min-w-[160px]">
                             {ele.servicesName}
                           </p>
                         </div>
@@ -218,17 +218,17 @@ export default function Services() {
 
                           {/* Price Row */}
                           <div className="flex items-center gap-1 justify-between">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
+                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
                               {t("orders.price")}
                             </span>
-                            <span className="bg-white text-[#1E5FAC] px-1 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center">
+                            <span className="bg-white text-[#1E5FAC] px-1 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center">
                               {ele.unitPrice} {currentLang === "ar" ? "ج.م" : "EGP"}
                             </span>
                           </div>
 
                           {/* Quantity Row */}
                           <div className="flex items-center gap-2 justify-between !my-6">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
+                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
                               {t("orders.quantity")}
                             </span>
                             <div className="flex items-center" dir="ltr">
@@ -236,15 +236,15 @@ export default function Services() {
                                 handleQuantityChange(ele.servicesID, -1);
                                 handelAllTotal();
                               }}
-                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full shadow-sm hover:bg-blue-50 transition">
+                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-3xl min-w-[50px]  shadow-[9px_11px_4px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
                                 <FaMinus size={12} />
                               </button>
-                              <span className="text-[#1E5FAC] font-bold text-center mx-1 text-lg">{ele.quantity}</span>
+                              <span className="text-[#1E5FAC] font-bold text-center mx-2.5 text-lg">{ele.quantity}</span>
                               <button onClick={() => {
                                 handleQuantityChange(ele.servicesID, 1);
                                 handelAllTotal();
                               }}
-                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-full shadow-sm hover:bg-blue-50 transition">
+                                className="w-8 h-8 flex items-center justify-center bg-white text-[#1E5FAC] rounded-3xl min-w-[50px] shadow-[9px_11px_4px_rgb(0_0_0/25%)] hover:bg-blue-50 transition">
                                 <FaPlus size={12} />
                               </button>
                             </div>
@@ -252,10 +252,10 @@ export default function Services() {
 
                           {/* Total Price */}
                           <div className="flex items-center gap-2 justify-between !mb-7">
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center order-last">
+                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center order-last">
                               {t("orders.total")}
                             </span>
-                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-sm min-w-[90px] text-center">
+                            <span className="bg-white text-[#1E5FAC] px-4 py-1.5 rounded-full font-bold shadow-[9px_11px_4px_rgb(0_0_0/25%)] min-w-[90px] text-center">
                               <span className={`
                                   ${currentLang === "ar" ? "ml-1" : "mr-1"}
                                   `}>{ele.totalPrice || ele.unitPrice}</span>
@@ -327,7 +327,7 @@ export default function Services() {
                 <div className="text-center mt-10">
                   <Link
                     to="/register"
-                    className="inline-block bg-[#0D54A0] hover:bg-blue-600 text-white font-semibold text-lg px-6 py-3 rounded-xl shadow-md transition duration-300"
+                    className="inline-block bg-[#0D54A0] hover:bg-blue-600 text-white font-semibold text-lg px-6 py-3 rounded-xl shadow-[9px_11px_4px_rgb(0_0_0/25%)] transition duration-300"
                   >
                     {t("features.register_now")}
                   </Link>
