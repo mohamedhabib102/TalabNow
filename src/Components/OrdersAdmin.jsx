@@ -90,7 +90,7 @@ export default function OrdersAdmin() {
               onChange={(e) => setStatusOrder(e.target.value)}
             >
               <option value="" disabled>{t("dashboard.orderStatus")}</option>
-              {/* <option value="Pending">{t("dashboard.pending")}</option> */}
+              <option value="Pending">{t("dashboard.pending")}</option>
               <option value="refused">{t("dashboard.refused")}</option>
               <option value="inDelivery">{t("dashboard.inDelivery")}</option>
               <option value="completed">{t("dashboard.completed")}</option>
