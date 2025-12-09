@@ -20,7 +20,7 @@
     "statusNow": "Status changed successfully",
     "cancelNow": "Cancel"
   },
-    "ordersTable": {
+  "ordersTable": {
     "orderNumber": "Order Number",
     "customerName": "Customer Name",
     "orderDate": "Order Date",
@@ -66,9 +66,15 @@
     "status": "Status",
     "orderDate": "Order Date",
     "messageAddNewServe": "Please fill in all fields before adding a new service.",
-    "messageChange": "Please fill in all fields before Changed."
+    "messageChange": "Please fill in all fields before Changed.",
+    "pending": "Pending Pickup",
+    "cancel": "Cancelled",
+    "refused": "Refused",
+    "inDelivery": "Picked Up by Laundry",
+    "completed": "Out for Delivery",
+    "received": "Delivered"
   },
-    "features": {
+  "features": {
     "shopping_title": "Shop Easily",
     "shopping_desc": "Manage your cart and track your orders with ease.",
     "tracking_title": "Track Your Orders",
@@ -79,7 +85,7 @@
     "secure_desc": "All your data is stored and encrypted for safety.",
     "register_now": "Create Your Account Now"
   },
-    "start": {
+  "start": {
     "heading": "Start Your Journey With Us Now",
     "description": "!Log in to enjoy all the features and easily track your orders"
   }
