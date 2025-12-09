@@ -155,7 +155,7 @@ export default function Services() {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          <button onClick={handelMessage} type="submit" className="bg-blue-500 py-3 px-4 rounded-xl text-white lg:w-28 w-full text-lg cursor-pointer mt-3">  ارسال </button>
+          <button onClick={handelMessage} type="submit" className="bg-blue-500 py-3 px-4 rounded-xl text-white lg:w-36 w-full text-lg cursor-pointer mt-3">  {t("orders.create")} </button>
         </form>
       </div>
       <div className="coustom_container">
