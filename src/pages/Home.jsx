@@ -13,7 +13,8 @@ export default function Home() {
 
     <section className="lg:py-16 py-8">
 
-      <h1 className="text-center text-4xl mb-4 pb-2 font-semibold dark:text-gray-100">
+      <div className="coustom_container">
+              <h1 className="text-center text-4xl mb-4 pb-2 font-semibold dark:text-gray-100">
         {userId ? t("start.heading_logged") : t("start.heading")}
       </h1>
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center" style={{ direction: "rtl" }}>
@@ -52,6 +53,7 @@ export default function Home() {
         >
           {userId ? t("start.button_logged") : t("features.register_now")}
         </Link>
+      </div>
       </div>
 
     </section>
