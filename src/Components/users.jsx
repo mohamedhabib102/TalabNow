@@ -3,41 +3,47 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 
 
-export default function Users (){
-    const {t, i18n} = useTranslation()
+export default function Users() {
+    const { t, i18n } = useTranslation()
     const [users, setUsers] = useState([]);
     const currentLang = i18n.language;
 
-      const getAllUsers = async () => {
+    const getAllUsers = async () => {
         try {
             const res = await axios.get("https://laundryar7.runasp.net/api/Laundry/GetAllPerson");
             setUsers(res.data)
         } catch (error) {
             console.log(error);
         }
-      }
-      
-      useEffect(() => {
+    }
+
+    useEffect(() => {
         getAllUsers()
-      }, [])
+    }, [])
     return (
         <section>
-            <div className="overflow-x-auto m-auto w-full " dir={currentLang === "ar" ? "rtl" : "ltr"}>
-                <table className="min-w-[1000px] border-spacing-0 w-full border-[2px] border-[#EEE]">
+            <div className="overflow-x-auto m-auto w-full" dir={currentLang === "ar" ? "rtl" : "ltr"}>
+                <table className="min-w-[1000px] border-spacing-0 w-full border-[2px] border-[#EEE] dark:border-gray-700">
                     <thead>
                         <tr>
-                           <th className={`p-4 bg-[#ffff] text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2 last:border-l-0" : "border-r-white border-r-2 last:border-r-0"}`}> # </th>
-                           <th className={`p-4 bg-[#ffff] text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2 last:border-l-0" : "border-r-white border-r-2 last:border-r-0"}`}> {t("dashboard.name")}  </th>
-                           <th className={`p-4 bg-[#ffff] text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2 last:border-l-0" : "border-r-white border-r-2 last:border-r-0"}`}> {t("dashboard.phoneNumber")} </th>
+                            <th className={`p-4 bg-white dark:bg-gray-800 text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2 last:border-l-0" : "border-r-[#eee] dark:border-r-gray-700 border-r-2 last:border-r-0"}`}> # </th>
+                            <th className={`p-4 bg-white dark:bg-gray-800 text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2 last:border-l-0" : "border-r-[#eee] dark:border-r-gray-700 border-r-2 last:border-r-0"}`}> {t("dashboard.name")}  </th>
+                            <th className={`p-4 bg-white dark:bg-gray-800 text-blue-400 font-bold text-[20px] ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2 last:border-l-0" : "border-r-[#eee] dark:border-r-gray-700 border-r-2 last:border-r-0"}`}> {t("dashboard.phoneNumber")} </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {users.length < 0 ? (<p>Not Founde Users Now</p>) : (
+                        {users.length === 0 ? (
+                            <tr>
+                                <td colSpan="3" className="text-center py-10 text-lg text-gray-500 dark:text-gray-400 dark:bg-gray-900">
+                                    {t("dashboard.notFoundUsers") || "Not Found Users Now"}
+                                </td>
+                            </tr>
+                        ) : (
                             users.map((ele, index) => (
                                 <tr key={ele.id}>
-                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{index + 1}</td>
-                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.name}</td>
-                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] border-b-[2px] border-b-[#eee] ${currentLang === "ar" ? "border-l-[#eeee] border-l-2" : "border-r-[#eee] border-r-2"}`}>{ele.phoneNumber}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{index + 1}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{ele.name}</td>
+                                    <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{ele.phoneNumber}</td>
                                 </tr>
                             ))
                         )}
@@ -45,5 +51,5 @@ export default function Users (){
                 </table>
             </div>
         </section>
-    )
- }
+    );
+}

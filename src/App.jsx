@@ -19,19 +19,19 @@ function App() {
   return (
 
     <>
-    <main className=''>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/orders' element={
+      <main className=''>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/orders' element={
             <OrdersProtectedRoute>
               <Orders />
             </OrdersProtectedRoute>
-        }/>
-        <Route element={<ProtectedRoutesAuth />}>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/register' element={<Register />}/>
-        </Route>
+          } />
+          <Route element={<ProtectedRoutesAuth />}>
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
 
           <Route path='/dashboard' element={
             <ProtectedRoute>
@@ -39,12 +39,12 @@ function App() {
             </ProtectedRoute>
           }>
             <Route index element={<Navigate to="users" replace />} />
-             <Route path='users' element={<Users />}/>
-             <Route path='ordersAdmin' element={<OrdersAdmin />}/>
-             <Route path='servicesAdmin' element={<ServicesAdmin />}/>
+            <Route path='users' element={<Users />} />
+            <Route path='ordersAdmin' element={<OrdersAdmin />} />
+            <Route path='servicesAdmin' element={<ServicesAdmin />} />
           </Route>
-      </Routes>
-    </main>
+        </Routes>
+      </main>
     </>
 
   )

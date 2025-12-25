@@ -81,16 +81,16 @@ export default function Login() {
     >
       <form
         onSubmit={handelSubmit}
-        className="text-center border-[2px] border-[#EEE] rounded-lg p-4 lg:w-[65%] w-full  m-auto"
+        className="text-center bg-white dark:bg-gray-900 border-[2px] border-[#EEE] dark:border-gray-800 rounded-2xl p-6 lg:w-[500px] w-full shadow-lg transition-colors duration-300"
       >
-        <h1 className="text-3xl font-semibold mb-8">
+        <h1 className="text-3xl font-bold mb-8 text-gray-800 dark:text-gray-100">
           {t("auth.loginAccount_1")}{" "}
-          <span className="text-blue-400">{t("auth.loginAccount_2")}</span>
+          <span className="text-blue-500">{t("auth.loginAccount_2")}</span>
         </h1>
 
-        <div className="mb-4 last:mb-0">
+        <div className="mb-5 last:mb-0">
           <input
-            className="border-[2px] border-[#EEE] px-4 py-3 rounded-md w-full placeholder:text-lg placeholder:duration-200 focus:placeholder:opacity-0 outline-none"
+            className="border-[2px] border-[#EEE] dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 rounded-xl w-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 placeholder:text-lg placeholder:duration-200 focus:placeholder:opacity-0 focus:border-blue-500 outline-none transition-all"
             type="text"
             id="userPhone"
             placeholder={t("auth.phone")}
@@ -102,9 +102,9 @@ export default function Login() {
           />
         </div>
 
-        <div className="mb-4 last:mb-0 relative">
+        <div className="mb-6 last:mb-0 relative">
           <input
-            className="border-[2px] border-[#EEE] px-4 py-3 rounded-md w-full placeholder:text-lg placeholder:duration-200 focus:placeholder:opacity-0 outline-none"
+            className="border-[2px] border-[#EEE] dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 rounded-xl w-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 placeholder:text-lg placeholder:duration-200 focus:placeholder:opacity-0 focus:border-blue-500 outline-none transition-all"
             type={eye ? "text" : "password"}
             placeholder={t("auth.password")}
             name="password"
@@ -114,32 +114,30 @@ export default function Login() {
             maxLength={14}
           />
           <span
-            className={`${
-              currentLang === "ar" ? "left-4" : "right-4"
-            } absolute top-1/2 -translate-y-1/2 cursor-pointer`}
+            className={`${currentLang === "ar" ? "left-4" : "right-4"
+              } absolute top-1/2 -translate-y-1/2 cursor-pointer text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors`}
             onClick={handleEye}
           >
-            {eye ? <FaEye size={25} /> : <FaEyeSlash size={25} />}
+            {eye ? <FaEye size={22} /> : <FaEyeSlash size={22} />}
           </span>
         </div>
 
         {messageKey && (
-          <p className="text-left p-3 bg-[#EEE] text-red-600 font-semibold rounded-lg mb-2">
+          <p className="text-left p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-semibold rounded-xl mb-4 border border-red-100 dark:border-red-900/30">
             {t(messageKey)}
           </p>
         )}
         {messageErrorKey && (
           <p
             dir={currentLang === "ar" ? "rtl" : "ltr"}
-            className={`${
-              currentLang === "ar" ? "text-right" : "text-left"
-            } p-3 bg-[#EEE] text-red-600 font-semibold rounded-lg mb-2`}
+            className={`${currentLang === "ar" ? "text-right" : "text-left"
+              } p-4 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-semibold rounded-xl mb-4 border border-red-100 dark:border-red-900/30`}
           >
             {t(messageErrorKey)}
           </p>
         )}
 
-        <button className="bg-blue-500 py-3 px-4 rounded-xl text-white lg:w-40 w-full text-lg cursor-pointer mt-3">
+        <button className="bg-blue-500 hover:bg-blue-600 active:scale-95 py-3.5 px-4 rounded-xl text-white font-bold w-full text-lg cursor-pointer mt-2 shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
           {t("auth.login")}
         </button>
       </form>

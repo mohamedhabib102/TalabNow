@@ -9,20 +9,20 @@ const DashboardLayout = () => {
 
 
   return (
-    <div className='flex flex-col lg:flex-row min-h-screen' dir={currentLang === "ar" ? "rtl" : "ltr"}>
-      
+    <div className='flex flex-col lg:flex-row min-h-screen dark:bg-gray-800 transition-colors duration-300' dir={currentLang === "ar" ? "rtl" : "ltr"}>
+
       {/* Sidebar */}
-      <nav className='bg-[#EEE] w-full lg:w-[250px] transition shadow-sm'>
-        <ul className='p-2 flex lg:flex-col flex-row justify-around lg:justify-start items-center lg:items-stretch gap-2 lg:gap-0'>
+      <nav className='bg-[#EEE] dark:bg-gray-900 w-full lg:w-[260px] transition-all duration-300 shadow-sm border-r dark:border-gray-800'>
+        <ul className='p-3 flex lg:flex-col flex-row justify-around lg:justify-start items-center lg:items-stretch gap-3 lg:gap-2'>
 
           {/* Users */}
-          <li className='mb-3 last:mb-0 w-full'>
+          <li className='w-full'>
             <NavLink
               to="users"
               className={({ isActive }) =>
-                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-lg text-sm lg:text-lg font-semibold uppercase transition
-                 hover:bg-blue-400 hover:text-white ` +
-                (isActive ? "bg-blue-400 text-white" : "bg-[#EEE] text-black")
+                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-xl text-sm lg:text-lg font-bold uppercase transition-all duration-300
+                 hover:bg-blue-400 hover:text-white dark:hover:bg-blue-500 ` +
+                (isActive ? "bg-blue-400 text-white shadow-md" : "bg-white/50 dark:bg-gray-800 text-gray-700 dark:text-gray-300")
               }
             >
               <FaUsers size={22} />
@@ -31,13 +31,13 @@ const DashboardLayout = () => {
           </li>
 
           {/* Orders */}
-          <li className='mb-3 last:mb-0 w-full'>
+          <li className='w-full'>
             <NavLink
               to="ordersAdmin"
               className={({ isActive }) =>
-                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-lg text-sm lg:text-lg font-semibold uppercase transition
-                 hover:bg-blue-400 hover:text-white ` +
-                (isActive ? "bg-blue-400 text-white" : "bg-[#EEE] text-black")
+                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-xl text-sm lg:text-lg font-bold uppercase transition-all duration-300
+                 hover:bg-blue-400 hover:text-white dark:hover:bg-blue-500 ` +
+                (isActive ? "bg-blue-400 text-white shadow-md" : "bg-white/50 dark:bg-gray-800 text-gray-700 dark:text-gray-300")
               }
             >
               <FaCodePullRequest size={22} />
@@ -46,13 +46,13 @@ const DashboardLayout = () => {
           </li>
 
           {/* Products */}
-          <li className='mb-3 last:mb-0 w-full'>
+          <li className='w-full'>
             <NavLink
               to="servicesAdmin"
               className={({ isActive }) =>
-                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-lg text-sm lg:text-lg font-semibold uppercase transition
-                 hover:bg-blue-400 hover:text-white ` +
-                (isActive ? "bg-blue-400 text-white" : "bg-[#EEE] text-black")
+                `flex items-center justify-center lg:justify-start gap-3 px-4 py-3 rounded-xl text-sm lg:text-lg font-bold uppercase transition-all duration-300
+                 hover:bg-blue-400 hover:text-white dark:hover:bg-blue-500 ` +
+                (isActive ? "bg-blue-400 text-white shadow-md" : "bg-white/50 dark:bg-gray-800 text-gray-700 dark:text-gray-300")
               }
             >
               <RiProductHuntFill size={22} />
@@ -66,8 +66,10 @@ const DashboardLayout = () => {
       </nav>
 
       {/* Content */}
-      <div className="w-full flex-1 p-4">
-        <Outlet />
+      <div className="w-full flex-1 p-6 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div className="bg-gray-50/50 dark:bg-gray-900/40 rounded-3xl p-4 min-h-full border dark:border-gray-700/50">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
