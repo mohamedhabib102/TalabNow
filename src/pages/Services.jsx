@@ -21,11 +21,12 @@ export default function Services() {
   const [services, setServices] = useState([]);
   const [selectedServices, setSelectedServices] = useState([]);
   const [toggle, setToggle] = useState(false);
-  const [phone, setPhone] = useState(0);
+  const [phone, setPhone] = useState(null);
   const [address, setAddress] = useState("")
   const { t, i18n } = useTranslation();
   const { userId } = useAuth()
   const [message, setMessage] = useState("")
+  const [messageType, setMessageType] = useState("")
   const [qtyModal, setQtyModal] = useState(false);
   const [editingService, setEditingService] = useState(null);
   const [loading, setLoading] = useState(false)
@@ -121,11 +122,27 @@ export default function Services() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setMessageType("")
+
+    // Phone Validation: numbers only and >= 5 digits
+    const phoneStr = String(phone || "").trim();
+    const isOnlyNumbers = /^\d+$/.test(phoneStr);
+
+    if (!phoneStr || !isOnlyNumbers || phoneStr.length < 5) {
+      setMessageType(currentLang === "ar" ? "يرجى إدخال رقم هاتف صحيح (5 أرقام على الأقل)" : "Please enter a valid phone number (at least 5 digits)");
+      return;
+    }
+
+    if (!address.trim()) {
+      setMessageType(currentLang === "ar" ? "يرجى إدخال العنوان" : "Please enter your address");
+      return;
+    }
+
     const selected = services.filter(serv => selectedServices.includes(serv.servicesID));
 
     const payload = {
       personId: parseFloat(userId),
-      phoneNumberPlus: phone,
+      phoneNumberPlus: phoneStr,
       addressPlus: address,
       totalAmount: handelAllTotal(),
       services: selected.map((ele) => ({
@@ -140,7 +157,7 @@ export default function Services() {
       setPhone("")
       setAddress("")
       setToggle(!toggle);
-      setMessage(currentLang === "ar" ? "تم إضافة الخدمة بنجاح" : "Service added successfully!")
+      setMessage(currentLang === "ar" ? "تم إضافة الطلب بنجاح" : "Order placed successfully!")
       setSelectedServices([])
     } catch (error) {
       console.log(error);
@@ -171,12 +188,15 @@ export default function Services() {
     <div className="dark:bg-gray-800">
       <div dir={currentLang === "ar" ? "rtl" : "ltr"} className={`${toggle ? "visible" : "invisible"} transition bg-[#00000096] fixed w-full h-full top-0 left-0 z-40 backdrop-blur-sm`}></div>
       <p className={`${message ? " visible opacity-100 translate-y-0" : " invisible opacity-0 -translate-y-5"} 
-        duration-200  fixed top-28 left-1/2 -translate-x-1/2 bg-blue-400 text-white font-bold p-4 rounded-xl`}>{message ? message : ""}</p>
+        duration-200  fixed top-28 left-1/2 -translate-x-1/2 bg-blue-400 text-white font-bold p-4 rounded-xl z-40`}>{message ? message : ""}</p>
       <div className={`
            ${toggle ? " scale-100" : " scale-0"}
              transition fixed z-50  bg-[#EEE] dark:bg-gray-900 py-9 px-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-[55%] w-[95%] rounded-xl shadow-2xl border-2 border-white/50 dark:border-gray-700`}>
         <FaXmark onClick={toggleChange} className=" absolute top-5 right-5 cursor-pointer transition text-gray-600 dark:text-gray-400 hover:text-blue-500" size={25} />
         <h3 className="text-center text-3xl mb-5 pb-4 font-semibold dark:text-gray-100"> {t("orders.create")} </h3>
+        <p className={`text-red-500/50 font-bold z-40
+          mb-2 ${currentLang === "ar" ? "text-right" : "text-left"}
+          `}>{messageType ? messageType : ""}</p>
         <form
           onSubmit={handleSubmit}
           className="text-center">
@@ -265,79 +285,79 @@ export default function Services() {
 
       <div className="coustom_container">
         <div className="md:py-16 py-8">
-        <h3 className="text-center text-4xl mb-6 pb-6 font-semibold text-[#1E5FAC] dark:text-blue-400" >  الخدمات  Servic<span className="">es</span> </h3>
-          
+          <h3 className="text-center text-4xl mb-6 pb-6 font-semibold text-[#1E5FAC] dark:text-blue-400" >  الخدمات  Servic<span className="">es</span> </h3>
+
           <section className="m-auto w-full " >
-            
-              <div className="w-full">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
-                  {services.map((ele) => (
-                    <div key={ele.servicesID} className="flex flex-col gap-1 items-center">
-                      <div className="relative w-full max-w-[160px]">
-                        <div className={`
+
+            <div className="w-full">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+                {services.map((ele) => (
+                  <div key={ele.servicesID} className="flex flex-col gap-1 items-center">
+                    <div className="relative w-full max-w-[160px]">
+                      <div className={`
                           relative aspect-square bg-[#0D54A0]/20 dark:bg-blue-900/40 rounded-[25px] border-2 transition-all duration-300
                           flex items-center justify-center overflow-hidden
                           ${selectedServices.includes(ele.servicesID) ? "border-[#0D54A0] dark:border-blue-400 shadow-lg scale-[1.05]" : "border-transparent dark:border-gray-700"}
                         `}>
-                          <MdLocalLaundryService size="85%" className="text-[#0D54A0] dark:text-blue-400 opacity-80" />
+                        <MdLocalLaundryService size="85%" className="text-[#0D54A0] dark:text-blue-400 opacity-80" />
 
-                          <button
-                            onClick={() => {
-                              toggleQtyModal(ele.servicesID)
-                            }}
-                            className={`
+                        <button
+                          onClick={() => {
+                            toggleQtyModal(ele.servicesID)
+                          }}
+                          className={`
                               absolute bottom-2 right-2 w-9 h-9 rounded-xl flex items-center justify-center text-white transition-all duration-300 shadow-md z-10
                               ${selectedServices.includes(ele.servicesID) ? "bg-green-500" : "bg-[#0D54A0] animate-pulse-custom"}
                             `}
+                        >
+                          {selectedServices.includes(ele.servicesID) ? <span className="font-bold text-sm">{ele.quantity}</span> : <FaPlus size={14} />}
+                        </button>
+
+                        {selectedServices.includes(ele.servicesID) && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              toggleServiceSelection(ele.servicesID);
+                              setQtyModal(false);
+                            }}
+                            className="absolute top-1.5 left-1.5 w-7 h-7 rounded-xl bg-red-500 flex items-center justify-center text-white transition-all duration-300 shadow-md z-30"
                           >
-                            {selectedServices.includes(ele.servicesID) ? <span className="font-bold text-sm">{ele.quantity}</span> : <FaPlus size={14} />}
+                            <IoClose size={20} />
                           </button>
-
-                          {selectedServices.includes(ele.servicesID) && (
-                            <button
-                              type="button"
-                              onClick={() => {
-                                toggleServiceSelection(ele.servicesID);
-                                setQtyModal(false);
-                              }}
-                              className="absolute top-1.5 left-1.5 w-7 h-7 rounded-xl bg-red-500 flex items-center justify-center text-white transition-all duration-300 shadow-md z-30"
-                            >
-                              <IoClose size={20} />
-                            </button>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="text-center mt-1">
-                        <h4 className="text-[#1E5FAC] dark:text-blue-400 font-bold text-sm md:text-base line-clamp-1">
-                          {ele.servicesName}
-                        </h4>
-                        <p className="text-[#0D54A0] dark:text-blue-300 font-bold text-xs md:text-sm opacity-80">
-                          {ele.unitPrice} {currentLang === "ar" ? "ج.م" : "EGP"}
-                        </p>
+                        )}
                       </div>
                     </div>
-                  ))}
-                </div>
+
+                    <div className="text-center mt-1">
+                      <h4 className="text-[#1E5FAC] dark:text-blue-400 font-bold text-sm md:text-base line-clamp-1">
+                        {ele.servicesName}
+                      </h4>
+                      <p className="text-[#0D54A0] dark:text-blue-300 font-bold text-xs md:text-sm opacity-80">
+                        {ele.unitPrice} {currentLang === "ar" ? "ج.م" : "EGP"}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
           </section>
           <div className="mt-10 pt-4 flex flex-col justify-center items-center gap-6">
-            
-              <div className="flex items-center justify-center lg:flex-row flex-col gap-8 
-              bg-[#0D54A0]/30 dark:bg-gray-900 p-4 md:w-[75%] h-45 w-full rounded-3xl">
-                <div className="bg-[#0D54A0] text-white text-2xl font-bold py-3 px-12 rounded-full shadow-lg flex items-center justify-center gap-4 min-w-[300px]">
-                  <span>{t("orders.allTotal")}</span>
-                  <span>{handelAllTotal()} {currentLang === "ar" ? "ج.م" : "EGP"}</span>
-                </div>
 
-                <button
-                  className={`block ${selectedServices.length > 0 ? "visible opacity-100" : "invisible opacity-0"} transition-all duration-300 bg-[#0D54A0] text-white text-2xl font-bold py-3 px-12 rounded-full shadow-lg flex items-center justify-center gap-4 min-w-[300px]`}
-                  onClick={() => {
-                    toggleChange()
-                  }}
-                > {t("orders.create")}</button>
+            <div className="flex items-center justify-center lg:flex-row flex-col gap-8 
+              bg-[#0D54A0]/30 dark:bg-gray-900 p-4 md:w-[75%] h-45 w-full rounded-3xl">
+              <div className="bg-[#0D54A0] text-white text-2xl font-bold py-3 px-12 rounded-full shadow-lg flex items-center justify-center gap-4 min-w-[300px]">
+                <span>{t("orders.allTotal")}</span>
+                <span>{handelAllTotal()} {currentLang === "ar" ? "ج.م" : "EGP"}</span>
               </div>
-            
+
+              <button
+                className={`block ${selectedServices.length > 0 ? "visible opacity-100" : "invisible opacity-0"} transition-all duration-300 bg-[#0D54A0] text-white text-2xl font-bold py-3 px-12 rounded-full shadow-lg flex items-center justify-center gap-4 min-w-[300px]`}
+                onClick={() => {
+                  toggleChange()
+                }}
+              > {t("orders.create")}</button>
+            </div>
+
           </div>
         </div>
       </div>

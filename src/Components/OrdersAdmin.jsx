@@ -131,7 +131,7 @@ export default function OrdersAdmin() {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order, index) => (
+              {[...orders].reverse().map((order, index) => (
                 <tr key={order.orderID}>
                   <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.orderID}</td>
                   <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.personName}</td>
