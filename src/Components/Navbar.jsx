@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FaLanguage } from "react-icons/fa6";
 import { useAuth } from "./context/AuthContext";
 import ButtonSwitchDark from "./ButtonSwitchDark";
-import Logo from "./logo";
+import Logo from "./Logo";
 
 
 export default function Navbar() {
