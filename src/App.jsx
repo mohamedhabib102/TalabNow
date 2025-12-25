@@ -12,17 +12,21 @@ import Users from './Components/users';
 import OrdersAdmin from './Components/OrdersAdmin';
 import ServicesAdmin from './Components/ServicesAdmin';
 import ProtectedRoutesAuth from './Components/ProtectedRoutesAuth';
+import Services from './pages/Services';
+import Footer from './Components/Footer';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 
 function App() {
 
   return (
 
-    <>
-      <main className=''>
-        <Navbar />
+    <div className="min-h-screen flex flex-col dark:bg-gray-800">
+      <Navbar />
+      <main className='flex-grow'>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
           <Route path='/orders' element={
             <OrdersProtectedRoute>
               <Orders />
@@ -45,7 +49,22 @@ function App() {
           </Route>
         </Routes>
       </main>
-    </>
+
+      <Footer />
+
+      {/* Fixed WhatsApp Button */}
+      <a
+        href="https://wa.me/+201103826261"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 left-8 z-[100] bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 active:scale-95 group"
+      >
+        <FaWhatsapp size={35} />
+        <span className="absolute right-full ml-3 mr-3 bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          تواصل معنا واتساب
+        </span>
+      </a>
+    </div>
 
   )
 }

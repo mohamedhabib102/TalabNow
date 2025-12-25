@@ -89,12 +89,11 @@ export default function OrdersAdmin() {
               value={statusOrder}
               onChange={(e) => setStatusOrder(e.target.value)}
             >
-              <option value="" disabled className="dark:bg-gray-800">{t("dashboard.orderStatus")}</option>
-              <option value="Pending" className="dark:bg-gray-800">{t("dashboard.pending")}</option>
-              <option value="refused" className="dark:bg-gray-800">{t("dashboard.refused")}</option>
-              <option value="inDelivery" className="dark:bg-gray-800">{t("dashboard.inDelivery")}</option>
-              <option value="completed" className="dark:bg-gray-800">{t("dashboard.completed")}</option>
-              <option value="received" className="dark:bg-gray-800">{t("dashboard.received")}</option>
+              <option value="" disabled className="dark:bg-gray-800">اختر حالة</option>
+              <option value="جاري الاستلام من العميل" className="dark:bg-gray-800">جاري الاستلام من العميل</option>
+              <option value="تم الاستلام بواسطه المغسله" className="dark:bg-gray-800">تم الاستلام بواسطه المغسله</option>
+              <option value="جاري التوصيل للعميل" className="dark:bg-gray-800">جاري التوصيل للعميل</option>
+              <option value="تم التوصيل" className="dark:bg-gray-800">تم التوصيل</option>
             </select>
           </div>
 
@@ -134,7 +133,7 @@ export default function OrdersAdmin() {
             <tbody>
               {orders.map((order, index) => (
                 <tr key={order.orderID}>
-                  <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{index + 1}</td>
+                  <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.orderID}</td>
                   <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.personName}</td>
                   <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.phoneNumberPlus}</td>
                   <td className={`p-4 text-lg text-left bg-[#f9f9f9] dark:bg-gray-900 dark:text-gray-300 border-b-[2px] border-b-[#eee] dark:border-b-gray-800 ${currentLang === "ar" ? "border-l-[#eeee] dark:border-l-gray-700 border-l-2" : "border-r-[#eee] dark:border-r-gray-700 border-r-2"}`}>{order.addressPlus}</td>

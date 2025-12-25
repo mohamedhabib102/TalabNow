@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FaLanguage } from "react-icons/fa6";
 import { useAuth } from "./context/AuthContext";
 import ButtonSwitchDark from "./ButtonSwitchDark";
+import Logo from "./logo";
 
 
 export default function Navbar() {
@@ -50,24 +51,28 @@ export default function Navbar() {
     <header ref={reftElement} className="bg-white dark:bg-gray-900 shadow-md relative transition-colors duration-300" >
       <div className="coustom_container">
         <nav className="flex justify-between items-center py-4">
-          <Link to={"/"} className="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
-            <span className="text-[35px] text-[#1E5FAC]">First</span>Clean
-          </Link>
-
+          <Logo  loaction={"home"}/>
           <ul className={`
+            list-none
             ${toggle ? "flex flex-col absolute top-full left-0 w-full bg-white dark:bg-gray-900 p-6 shadow-xl z-50 animate-slideDown" : "hidden"} 
             md:flex md:flex-row md:static md:w-[60%] md:justify-between md:p-0 md:shadow-none items-center gap-6
           `}>
-            <div className="flex flex-col md:flex-row gap-6 md:gap-3 items-center">
-              <li>
+            {/* Navigation Links Group */}
+            <div className="flex flex-col md:flex-row gap-4 md:gap-1 items-center list-none w-full md:w-auto">
+              <li className="w-full md:w-auto">
                 <NavLink className={({ isActive }) =>
-                  `${isActive ? "text-[#1E5FAC] font-bold" : "text-gray-600 dark:text-gray-400 font-medium hover:text-[#1E5FAC] dark:hover:text-blue-400"} text-xl transition-colors duration-300`
-                } to={"/"}>{t("navbar.services")}</NavLink>
+                  `px-4 py-1.5 rounded-xl text-xl transition-all duration-300 block text-center w-full md:w-auto ${isActive ? "bg-[#1E5FAC] text-white font-bold shadow-md" : "text-gray-600 dark:text-gray-400 font-medium hover:text-[#1E5FAC] dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"}`
+                } to={"/"}>{t("navbar.home")}</NavLink>
+              </li>
+              <li className="w-full md:w-auto">
+                <NavLink className={({ isActive }) =>
+                  `px-4 py-1.5 rounded-xl text-xl transition-all duration-300 block text-center w-full md:w-auto ${isActive ? "bg-[#1E5FAC] text-white font-bold shadow-md" : "text-gray-600 dark:text-gray-400 font-medium hover:text-[#1E5FAC] dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"}`
+                } to={"/services"}>{t("navbar.services")}</NavLink>
               </li>
               {userId && (
-                <li>
+                <li className="w-full md:w-auto">
                   <NavLink className={({ isActive }) =>
-                    `${isActive ? "text-[#1E5FAC] font-bold" : "text-gray-600 dark:text-gray-400 font-medium hover:text-[#1E5FAC] dark:hover:text-blue-400"} text-xl transition-colors duration-300`
+                    `px-4 py-1.5 rounded-xl text-xl transition-all duration-300 block text-center w-full md:w-auto ${isActive ? "bg-[#1E5FAC] text-white font-bold shadow-md" : "text-gray-600 dark:text-gray-400 font-medium hover:text-[#1E5FAC] dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"}`
                   } to={"/orders"}>{t("navbar.orders")}</NavLink>
                 </li>
               )}

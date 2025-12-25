@@ -57,6 +57,13 @@ export default function Services() {
 
   const currentLang = i18n.language;
   const toggleChange = () => {
+    if (!userId) {
+      setMessage(currentLang === "ar" ? "الرجاء تسجيل الدخول" : "Please login first")
+      setTimeout(() => {
+        setMessage("")
+      }, 1900)
+      return;
+    }
     setToggle(!toggle)
   }
 
@@ -258,20 +265,10 @@ export default function Services() {
 
       <div className="coustom_container">
         <div className="md:py-16 py-8">
-          {userId ? (<h3 className="text-center text-4xl mb-6 pb-6 font-semibold text-[#1E5FAC] dark:text-blue-400" >  الخدمات  Servic<span className="">es</span> </h3>) :
-            (
-              <>
-                <h1 className="text-center text-4xl mb-4 pb-2 font-semibold dark:text-gray-100">{t("start.heading")}</h1>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center" style={{ direction: "rtl" }}>{t("start.description")}</p>
-              </>
-            )}
-
-
+        <h3 className="text-center text-4xl mb-6 pb-6 font-semibold text-[#1E5FAC] dark:text-blue-400" >  الخدمات  Servic<span className="">es</span> </h3>
+          
           <section className="m-auto w-full " >
-            {userId ? (
-
-
-
+            
               <div className="w-full">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
                   {services.map((ele) => (
@@ -323,51 +320,9 @@ export default function Services() {
                   ))}
                 </div>
               </div>
-
-            ) : (
-
-              <>
-                <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center max-w-4xl mx-auto">
-                  {[
-                    { id: 1, icon: <FaShoppingCart size="60%" />, title: t("features.shopping_title"), desc: t("features.shopping_desc") },
-                    { id: 2, icon: <FaBoxOpen size="60%" />, title: t("features.tracking_title"), desc: t("features.tracking_desc") },
-                    { id: 3, icon: <FaComments size="60%" />, title: t("features.chat_title"), desc: t("features.chat_desc") },
-                    { id: 4, icon: <FaLock size="60%" />, title: t("features.secure_title"), desc: t("features.secure_desc") },
-                  ].map((feat) => (
-                    <div key={feat.id} className="flex flex-col gap-3 items-center w-full max-w-[170px] group">
-                      <div className="relative w-full aspect-square bg-[#0D54A0]/10 dark:bg-blue-900/30 rounded-[30px] border-2 border-transparent transition-all duration-300 flex items-center justify-center group-hover:border-[#0D54A0] dark:group-hover:border-blue-400 group-hover:shadow-md">
-                        <div className="text-[#0D54A0] dark:text-blue-400 opacity-90 group-hover:scale-110 transition-transform flex items-center justify-center w-full h-full">
-                          {feat.icon}
-                        </div>
-                      </div>
-
-                      <div className="text-center px-2">
-                        <h4 className="text-[#1E5FAC] dark:text-blue-400 font-bold text-lg mb-0.5">
-                          {feat.title}
-                        </h4>
-                        <p className="text-gray-500 dark:text-gray-400 text-sm leading-tight opacity-80">
-                          {feat.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="text-center mt-12">
-                  <Link
-                    to="/register"
-                    className="inline-block bg-[#0D54A0] hover:bg-blue-600 text-white font-bold text-lg px-10 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
-                  >
-                    {t("features.register_now")}
-                  </Link>
-                </div>
-
-              </>
-
-            )}
           </section>
           <div className="mt-10 pt-4 flex flex-col justify-center items-center gap-6">
-            {userId ? (
+            
               <div className="flex items-center justify-center lg:flex-row flex-col gap-8 
               bg-[#0D54A0]/30 dark:bg-gray-900 p-4 md:w-[75%] h-45 w-full rounded-3xl">
                 <div className="bg-[#0D54A0] text-white text-2xl font-bold py-3 px-12 rounded-full shadow-lg flex items-center justify-center gap-4 min-w-[300px]">
@@ -382,7 +337,7 @@ export default function Services() {
                   }}
                 > {t("orders.create")}</button>
               </div>
-            ) : ""}
+            
           </div>
         </div>
       </div>

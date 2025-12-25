@@ -72,7 +72,7 @@ body {
     li  {
       @apply w-full mb-1;
       a{
-        @apply block
+        @apply block w-full
       }
     }
 

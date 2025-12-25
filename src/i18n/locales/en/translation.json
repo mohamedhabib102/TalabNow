@@ -4,6 +4,7 @@
     "titleTwo": "abNow",
     "services": "Services",
     "orders": "Orders",
+    "home": "Home",
     "login": "Login",
     "register": "Register"
   },
@@ -18,7 +19,8 @@
     "total": "SubTotal",
     "allTotal": "Total",
     "statusNow": "Status changed successfully",
-    "cancelNow": "Cancel"
+    "cancelNow": "Cancel",
+    "max_delivery_time": "at most at 9:00 PM"
   },
   "ordersTable": {
     "orderNumber": "Order Number",
@@ -87,6 +89,13 @@
   },
   "start": {
     "heading": "Start Your Journey With Us Now",
-    "description": "!Log in to enjoy all the features and easily track your orders"
+    "description": "Log in to enjoy all the features and easily track your orders!",
+    "heading_logged": "Welcome Back!",
+    "description_logged": "Browse our premium services and place your order now!",
+    "button_logged": "Explore Services"
+  },
+  "footer": {
+    "rights_reserved": "All Rights Reserved",
+    "developed_by": "Developed by"
   }
 }
