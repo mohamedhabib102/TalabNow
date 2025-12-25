@@ -102,24 +102,24 @@ export default function Navbar() {
                 </Link>
               )}
 
-              <div className="flex items-center gap-2 w-full md:w-auto justify-center">
-                <button
-                  className="flex items-center gap-1 text-[#1E5FAC] dark:text-blue-400 transition hover:bg-blue-50 dark:hover:bg-blue-900/20 p-2 px-4 rounded-xl cursor-pointer font-bold"
-                  onClick={toggleLanguage}
-                >
-                  <FaLanguage size={22} />
-                  <span className="text-sm">{currentLang === "ar" ? "EN" : "AR"}</span>
-                </button>
-                <ButtonSwitchDark />
-              </div>
             </div>
           </ul>
+          <div className="flex items-center gap-4 w-full md:w-auto justify-end">
+            <button
+              className="flex items-center gap-1 text-[#1E5FAC] dark:text-blue-400 transition hover:bg-blue-50 dark:hover:bg-blue-900/20 p-1 px-3 rounded-xl cursor-pointer font-bold"
+              onClick={toggleLanguage}
+            >
+              <FaLanguage size={22} />
+              <span className="text-sm">{currentLang === "ar" ? "EN" : "AR"}</span>
+            </button>
+            <ButtonSwitchDark />
+            <button onClick={toggles} className="relative w-10 h-5 bg-transparent cursor-pointer md:hidden block z-50">
+              <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 rotate-45" : "top-0"}`}></span>
+              <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 opacity-0" : "top-2"}`}></span>
+              <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 -rotate-45" : "top-4"}`}></span>
+            </button>
+          </div>
 
-          <button onClick={toggles} className="relative w-10 h-5 bg-transparent cursor-pointer md:hidden block z-50">
-            <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 rotate-45" : "top-0"}`}></span>
-            <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 opacity-0" : "top-2"}`}></span>
-            <span className={`absolute transition-all duration-300 left-0 h-1 w-full bg-[#1E5FAC] rounded-sm ${toggle ? "top-2 -rotate-45" : "top-4"}`}></span>
-          </button>
         </nav>
       </div>
     </header>
