@@ -99,7 +99,7 @@ export default function Orders() {
 
       <div className="md:py-16 py-8">
         <h3 className="text-center text-4xl mb-4 font-black text-[#1E5FAC] dark:text-blue-400">
-          {currentLang === "ar" ? "تتبع طلباتك" : "Track Your Orders"}
+          {currentLang === "ar" ? " طلباتي " : "My Orders"}
         </h3>
         <p className="text-center text-gray-500 dark:text-gray-400 mb-12 font-medium">
           {currentLang === "ar" ? "تابع حالة طلباتك لحظة بلحظة" : "Follow your orders status step by step"}
@@ -107,7 +107,7 @@ export default function Orders() {
 
         <section className="mx-auto" dir={currentLang === "ar" ? "rtl" : "ltr"}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {orders.map((order) => (
+            {[...orders].reverse().map((order) => (
               <div key={order.orderID} className="group flex flex-col bg-white dark:bg-gray-900 rounded-[40px] shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 overflow-hidden relative">
 
                 {/* Header Decoration */}

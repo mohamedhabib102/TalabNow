@@ -57,12 +57,9 @@ function App() {
         href="https://wa.me/+201103826261"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 left-8 z-[100] bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 active:scale-95 group"
+        className="fixed bottom-8 left-8 z-[100] bg-green-500 text-white p-2.5 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 active:scale-95 group"
       >
-        <FaWhatsapp size={35} />
-        <span className="absolute right-full ml-3 mr-3 bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          تواصل معنا واتساب
-        </span>
+        <FaWhatsapp size={28} />
       </a>
     </div>
 
