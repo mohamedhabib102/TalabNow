@@ -183,22 +183,34 @@ export default function Orders() {
 
                 {/* Footer / Action */}
                 <div className="px-8 pb-8">
-                  <button
-                    onClick={() => handleAction(order.orderID)}
-                    disabled={loadingOrderId === order.orderID || order.status === "refused" || order.status === "تم التوصيل"}
-                    className={`
-                      w-full lg:py-3 py-1.5 lg:rounded-2xl rounded-lg font-black text-lg transition-all duration-300 shadow-lg
-                      ${(order.status === "refused" || order.status === "تم التوصيل")
-                        ? "bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed shadow-none"
-                        : "bg-red-500 hover:bg-red-600 text-white hover:scale-[1.02] active:scale-95"
-                      }
-                    `}
-                  >
-                    {loadingOrderId === order.orderID
-                      ? <SiTrueup size={24} className="mx-auto animate-spin" />
-                      : (order.status === "refused" || order.status === "ملغي" ? (currentLang === "ar" ? "تم الإلغاء" : "Cancelled") : order.status === "تم التوصيل" ? (currentLang === "ar" ? "مكتمل" : "Completed") : t("orders.cancelNow"))
-                    }
-                  </button>
+                  {(() => {
+                    const isDisable =
+                      loadingOrderId === order.orderID ||
+                      ["refused", "ملغي", "تم التوصيل", "جاري الاستلام من العميل", "تم الاستلام بواسطه المغسله", "جاري التوصيل للعميل"].includes(order.status);
+
+                    return (
+                      <button
+                        onClick={() => handleAction(order.orderID)}
+                        disabled={isDisable}
+                        className={`
+                          w-full lg:py-3 py-1.5 lg:rounded-2xl rounded-lg font-black text-lg transition-all duration-300 shadow-lg
+                          ${isDisable
+                            ? "bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed shadow-none"
+                            : "bg-red-500 hover:bg-red-600 text-white hover:scale-[1.02] active:scale-95"
+                          }
+                        `}
+                      >
+                        {loadingOrderId === order.orderID
+                          ? <SiTrueup size={24} className="mx-auto animate-spin" />
+                          : (order.status === "refused" || order.status === "ملغي"
+                            ? (currentLang === "ar" ? "تم الإلغاء" : "Cancelled")
+                            : order.status === "تم التوصيل"
+                              ? (currentLang === "ar" ? "مكتمل" : "Completed")
+                              : t("orders.cancelNow"))
+                        }
+                      </button>
+                    );
+                  })()}
                 </div>
               </div>
             ))}
