@@ -40,7 +40,7 @@ export default function OrdersAdmin() {
     }
 
     if (statusOrder === "refused" && !messageOrder.trim()) {
-      alert(t("dashboard.rejectionReason") || "Please enter rejection reason");
+      alert(currentLang === "ar" ? "  الرجاء إدخال سبب الرفض" : "Please enter rejection reason");
       return;
     }
 
@@ -91,6 +91,7 @@ export default function OrdersAdmin() {
             >
               <option value="" disabled className="dark:bg-gray-800">اختر حالة</option>
               <option value="جاري الاستلام من العميل" className="dark:bg-gray-800">جاري الاستلام من العميل</option>
+              <option value="refused" className="dark:bg-gray-800">رفض</option>
               <option value="تم الاستلام بواسطه المغسله" className="dark:bg-gray-800">تم الاستلام بواسطه المغسله</option>
               <option value="جاري التوصيل للعميل" className="dark:bg-gray-800">جاري التوصيل للعميل</option>
               <option value="تم التوصيل" className="dark:bg-gray-800">تم التوصيل</option>
@@ -153,7 +154,7 @@ export default function OrdersAdmin() {
                       onClick={() => {
                         toggleChange()
                         setCurrentOrderId(order.orderID)
-                      }}>Change</button>
+                      }}>{currentLang === "ar" ? "تغيير" : "Change"}</button>
                   </td>
                 </tr>
               ))}

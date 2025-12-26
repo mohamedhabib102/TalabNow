@@ -118,13 +118,13 @@ export default function Orders() {
                       #{order.orderID}
                     </span>
                     <div className={`px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-sm 
-                      ${(order.status === "Cancel" || order.status === "ملغي" || order.status === "مرفوض")
+                      ${(order.status === "refused" || order.status === "ملغي")
                         ? "bg-red-100 text-red-500 border border-red-200"
                         : order.status === "تم التوصيل"
                           ? "bg-green-100 text-green-700 border border-green-300"
                           : "bg-blue-50 text-[#1E5FAC] border border-blue-100"
                       }`}>
-                      {order.status}
+                      {order.status === "refused" ? "مرفوض" : order.status}
                     </div>
                   </div>
                 </div>
@@ -185,10 +185,10 @@ export default function Orders() {
                 <div className="px-8 pb-8">
                   <button
                     onClick={() => handleAction(order.orderID)}
-                    disabled={loadingOrderId === order.orderID || order.status === "Cancel" || order.status === "ملغي" || order.status === "تم التوصيل"}
+                    disabled={loadingOrderId === order.orderID || order.status === "refused" || order.status === "تم التوصيل"}
                     className={`
-                      w-full py-4 rounded-2xl font-black text-lg transition-all duration-300 shadow-lg
-                      ${(order.status === "Cancel" || order.status === "ملغي" || order.status === "تم التوصيل")
+                      w-full lg:py-3 py-1.5 lg:rounded-2xl rounded-lg font-black text-lg transition-all duration-300 shadow-lg
+                      ${(order.status === "refused" || order.status === "تم التوصيل")
                         ? "bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed shadow-none"
                         : "bg-red-500 hover:bg-red-600 text-white hover:scale-[1.02] active:scale-95"
                       }
@@ -196,7 +196,7 @@ export default function Orders() {
                   >
                     {loadingOrderId === order.orderID
                       ? <SiTrueup size={24} className="mx-auto animate-spin" />
-                      : (order.status === "Cancel" || order.status === "ملغي" ? (currentLang === "ar" ? "تم الإلغاء" : "Cancelled") : order.status === "تم التوصيل" ? (currentLang === "ar" ? "مكتمل" : "Completed") : t("orders.cancelNow"))
+                      : (order.status === "refused" || order.status === "ملغي" ? (currentLang === "ar" ? "تم الإلغاء" : "Cancelled") : order.status === "تم التوصيل" ? (currentLang === "ar" ? "مكتمل" : "Completed") : t("orders.cancelNow"))
                     }
                   </button>
                 </div>
