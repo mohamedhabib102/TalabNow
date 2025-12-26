@@ -48,10 +48,10 @@ export default function Home() {
 
       <div className="text-center mt-12">
         <Link
-          to={userId ? "/services" : "/register"}
+          to={"/services"}
           className="inline-block bg-[#0D54A0] hover:bg-blue-600 text-white font-bold text-lg px-10 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
         >
-          {userId ? t("start.button_logged") : t("features.register_now")}
+          {t("start.button_logged")}
         </Link>
       </div>
       </div>
